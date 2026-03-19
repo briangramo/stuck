@@ -22,6 +22,7 @@ function DistanceService.Init(ctx)
                 state.focusPosition = position
                 state.currentDistance = BridgePatterns.GetDistanceFromPosition(position)
                 state.farthestDistance = math.max(state.farthestDistance or 0, state.currentDistance)
+                ctx.Services.MilestoneService.UpdateDistance(state, state.farthestDistance)
 
                 if position.Y <= ctx.Config.FALL_Y_THRESHOLD then
                     ctx.Services.StuckService.MarkPlayerStuck(ctx, state.player)
@@ -34,4 +35,3 @@ function DistanceService.Init(ctx)
 end
 
 return DistanceService
-

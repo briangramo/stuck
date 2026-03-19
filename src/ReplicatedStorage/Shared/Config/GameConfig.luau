@@ -1,6 +1,6 @@
 return {
     GAME_NAME = "Stuck Forever",
-    BUILD = 2,
+    BUILD = 3,
     WORLD_SEED = 41731,
 
     LOBBY_SIZE = 200,
@@ -13,11 +13,14 @@ return {
     BRIDGE_SEGMENT_LENGTH = 48,
     BRIDGE_PART_HEIGHT = 2,
     BRIDGE_PART_CENTER_Y = 3,
+    BRIDGE_SIDE_TERRAIN_Z = 72,
+    BRIDGE_SIDE_TERRAIN_WIDTH = 24,
 
     SLIME_CENTER_Y = 1,
     SLIME_HEIGHT = 3,
     LOBBY_SLIME_EXTENT = 900,
     FALL_Y_THRESHOLD = -6,
+    MILESTONE_INTERVAL = 100,
 
     STREAM_RADIUS = 200,
     STREAM_UPDATE_RATE = 0.5,
@@ -29,4 +32,3 @@ return {
     DATASTORE_PLAYER = "StuckForever_PlayerState_v2",
     DATASTORE_CHUNK = "StuckForever_ChunkState_v2",
 }
-

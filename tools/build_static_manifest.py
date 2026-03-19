@@ -217,7 +217,7 @@ def write_checklist(manifest: dict[str, Any]) -> None:
         "- `ReplicatedStorage/Net/RemoteFunctions` for `RemoteFunction`",
         "- `ServerScriptService/Signals/BindableEvents` for `BindableEvent`",
         "- `ServerScriptService/Signals/BindableFunctions` for `BindableFunction`",
-        "- `SoundService/Ambience` for `Sound`",
+        "- `ReplicatedStorage/Sounds` for `Sound`",
         "",
     ]
 

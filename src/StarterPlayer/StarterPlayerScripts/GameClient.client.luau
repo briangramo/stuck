@@ -3,6 +3,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local GameConfig = require(ReplicatedStorage.Shared.Config.GameConfig)
 local clientModules = script.Parent:WaitForChild("Client")
+local MilestoneController = require(clientModules:WaitForChild("MilestoneController"))
 local SpectateController = require(clientModules:WaitForChild("SpectateController"))
 
 local ctx = {
@@ -10,4 +11,5 @@ local ctx = {
     player = Players.LocalPlayer,
 }
 
+MilestoneController.Init(ctx)
 SpectateController.Init(ctx)

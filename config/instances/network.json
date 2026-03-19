@@ -1,5 +1,5 @@
 {
-  "build": 2,
+  "build": 3,
   "entries": [
     {
       "name": "SpectateCycleRequest",
@@ -20,6 +20,16 @@
       },
       "direction": "ServerToClient",
       "notes": "Pushes stuck UI state and current spectate target."
+    },
+    {
+      "name": "DistanceMilestoneReached",
+      "className": "RemoteEvent",
+      "parent": {
+        "service": "ReplicatedStorage",
+        "segments": ["Net", "RemoteEvents"]
+      },
+      "direction": "ServerToClient",
+      "notes": "Fires whenever a runner reaches a new 100-stud milestone."
     }
   ]
 }

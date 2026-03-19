@@ -4,10 +4,32 @@
     "$className": "DataModel",
     "ReplicatedStorage": {
       "$path": "src/ReplicatedStorage",
+      "Sounds": {
+        "$className": "Folder",
+        "SlimeAmbience": {
+          "$className": "Sound",
+          "$properties": {
+            "SoundId": "rbxassetid://0",
+            "Volume": 0.18,
+            "Looped": true
+          }
+        },
+        "MilestoneCelebration": {
+          "$className": "Sound",
+          "$properties": {
+            "SoundId": "rbxassetid://0",
+            "Volume": 0.7,
+            "Looped": false
+          }
+        }
+      },
       "Net": {
         "$className": "Folder",
         "RemoteEvents": {
           "$className": "Folder",
+          "DistanceMilestoneReached": {
+            "$className": "RemoteEvent"
+          },
           "SpectateCycleRequest": {
             "$className": "RemoteEvent"
           },
@@ -29,20 +51,6 @@
         },
         "BindableFunctions": {
           "$className": "Folder"
-        }
-      }
-    },
-    "SoundService": {
-      "Ambience": {
-        "$className": "Folder",
-        "SlimeHum": {
-          "$className": "Sound",
-          "$properties": {
-            "SoundId": "rbxassetid://0",
-            "Volume": 0.18,
-            "Looped": true,
-            "RollOffMaxDistance": 10000
-          }
         }
       }
     },

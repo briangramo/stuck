@@ -4,7 +4,7 @@
 return {
     ["gameName"] = "Stuck Forever",
     ["network"] = {
-        ["build"] = 2,
+        ["build"] = 3,
         ["entries"] = {
             {
                 ["name"] = "SpectateCycleRequest",
@@ -31,6 +31,19 @@ return {
                 },
                 ["direction"] = "ServerToClient",
                 ["notes"] = "Pushes stuck UI state and current spectate target.",
+            },
+            {
+                ["name"] = "DistanceMilestoneReached",
+                ["className"] = "RemoteEvent",
+                ["parent"] = {
+                    ["service"] = "ReplicatedStorage",
+                    ["segments"] = {
+                        "Net",
+                        "RemoteEvents",
+                    },
+                },
+                ["direction"] = "ServerToClient",
+                ["notes"] = "Fires whenever a runner reaches a new 100-stud milestone.",
             },
         },
         ["byName"] = {
@@ -60,6 +73,19 @@ return {
                 ["direction"] = "ServerToClient",
                 ["notes"] = "Pushes stuck UI state and current spectate target.",
             },
+            ["DistanceMilestoneReached"] = {
+                ["name"] = "DistanceMilestoneReached",
+                ["className"] = "RemoteEvent",
+                ["parent"] = {
+                    ["service"] = "ReplicatedStorage",
+                    ["segments"] = {
+                        "Net",
+                        "RemoteEvents",
+                    },
+                },
+                ["direction"] = "ServerToClient",
+                ["notes"] = "Fires whenever a runner reaches a new 100-stud milestone.",
+            },
         },
     },
     ["bindables"] = {
@@ -70,37 +96,65 @@ return {
         },
     },
     ["sounds"] = {
-        ["build"] = 2,
+        ["build"] = 3,
         ["entries"] = {
             {
-                ["name"] = "SlimeHum",
+                ["name"] = "SlimeAmbience",
                 ["className"] = "Sound",
                 ["parent"] = {
-                    ["service"] = "SoundService",
+                    ["service"] = "ReplicatedStorage",
                     ["segments"] = {
-                        "Ambience",
+                        "Sounds",
                     },
                 },
                 ["soundId"] = "rbxassetid://0",
                 ["volume"] = 0.18,
                 ["looped"] = true,
-                ["notes"] = "Placeholder ambience slot. In Studio, assign a valid audio asset to SoundService/Ambience/SlimeHum before enabling ambience.",
+                ["notes"] = "Placeholder ambience loop. In Studio, assign a valid audio asset to ReplicatedStorage/Sounds/SlimeAmbience.",
+            },
+            {
+                ["name"] = "MilestoneCelebration",
+                ["className"] = "Sound",
+                ["parent"] = {
+                    ["service"] = "ReplicatedStorage",
+                    ["segments"] = {
+                        "Sounds",
+                    },
+                },
+                ["soundId"] = "rbxassetid://0",
+                ["volume"] = 0.7,
+                ["looped"] = false,
+                ["notes"] = "Short bright win-stinger for each 100-stud milestone. In Studio, assign a valid audio asset to ReplicatedStorage/Sounds/MilestoneCelebration.",
             },
         },
         ["byName"] = {
-            ["SlimeHum"] = {
-                ["name"] = "SlimeHum",
+            ["SlimeAmbience"] = {
+                ["name"] = "SlimeAmbience",
                 ["className"] = "Sound",
                 ["parent"] = {
-                    ["service"] = "SoundService",
+                    ["service"] = "ReplicatedStorage",
                     ["segments"] = {
-                        "Ambience",
+                        "Sounds",
                     },
                 },
                 ["soundId"] = "rbxassetid://0",
                 ["volume"] = 0.18,
                 ["looped"] = true,
-                ["notes"] = "Placeholder ambience slot. In Studio, assign a valid audio asset to SoundService/Ambience/SlimeHum before enabling ambience.",
+                ["notes"] = "Placeholder ambience loop. In Studio, assign a valid audio asset to ReplicatedStorage/Sounds/SlimeAmbience.",
+            },
+            ["MilestoneCelebration"] = {
+                ["name"] = "MilestoneCelebration",
+                ["className"] = "Sound",
+                ["parent"] = {
+                    ["service"] = "ReplicatedStorage",
+                    ["segments"] = {
+                        "Sounds",
+                    },
+                },
+                ["soundId"] = "rbxassetid://0",
+                ["volume"] = 0.7,
+                ["looped"] = false,
+                ["notes"] = "Short bright win-stinger for each 100-stud milestone. In Studio, assign a valid audio asset to ReplicatedStorage/Sounds/MilestoneCelebration.",
             },
         },
     },

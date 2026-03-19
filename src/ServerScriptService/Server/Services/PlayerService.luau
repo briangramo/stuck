@@ -47,6 +47,7 @@ local function onPlayerAdded(ctx, player)
         currentDistance = 0,
         farthestDistance = 0,
         stuckDistance = 0,
+        lastCelebratedMilestone = 0,
         focusPosition = ctx.World.SpawnPosition,
     }
     ctx.State.players[player.UserId] = state
@@ -69,6 +70,7 @@ local function onPlayerAdded(ctx, player)
         state.currentDistance = record.distance
         state.farthestDistance = record.distance
         state.stuckDistance = record.distance
+        state.lastCelebratedMilestone = math.floor(record.distance / ctx.Config.MILESTONE_INTERVAL)
         state.focusPosition = Vector3.new(record.position.x, record.position.y, record.position.z)
         ctx.State.monuments[player.UserId] = {
             record = record,

@@ -7,6 +7,10 @@ local BridgeService = {
     loadedSegments = {},
 }
 
+local function hash(value)
+    return (value * 137 + GameConfig.WORLD_SEED * 17) % 2147483647
+end
+
 local function addSlimeParticles(part)
     local attachment = Instance.new("Attachment")
     attachment.Parent = part
@@ -39,6 +43,49 @@ local function createSegmentPart(name, parent, position, size, color, material)
     part.Material = material
     part.Parent = parent
     return part
+end
+
+local function addRockBanks(model, definition)
+    local shelfColor = Color3.fromRGB(91, 86, 76)
+    local boulderColor = Color3.fromRGB(116, 108, 97)
+
+    for _, side in ipairs({ -1, 1 }) do
+        local shelfHeight = 10 + (hash(definition.segmentIndex + (side * 19)) % 4)
+        createSegmentPart(
+            side == -1 and "WestRockShelf" or "EastRockShelf",
+            model,
+            Vector3.new(
+                definition.baseX + (GameConfig.BRIDGE_SEGMENT_LENGTH * 0.5),
+                GameConfig.SLIME_CENTER_Y - 1 + (shelfHeight * 0.5),
+                side * GameConfig.BRIDGE_SIDE_TERRAIN_Z
+            ),
+            Vector3.new(GameConfig.BRIDGE_SEGMENT_LENGTH, shelfHeight, GameConfig.BRIDGE_SIDE_TERRAIN_WIDTH),
+            shelfColor,
+            Enum.Material.Slate
+        )
+
+        for rockIndex = 1, 2 do
+            local seed = hash((definition.segmentIndex * 31) + (rockIndex * 11) + ((side + 2) * 7))
+            local size = Vector3.new(12 + (seed % 8), 10 + (seed % 7), 12 + (seed % 10))
+            local rock = createSegmentPart(
+                string.format(side == -1 and "WestRock_%02d" or "EastRock_%02d", rockIndex),
+                model,
+                Vector3.new(
+                    definition.baseX + 10 + ((rockIndex - 1) * 20) + (seed % 5),
+                    GameConfig.SLIME_CENTER_Y + 1 + (size.Y * 0.5),
+                    side * (GameConfig.BRIDGE_SIDE_TERRAIN_Z - 8 - (seed % 8))
+                ),
+                size,
+                boulderColor,
+                Enum.Material.Rock
+            )
+            rock.CFrame = rock.CFrame * CFrame.Angles(
+                math.rad((seed % 8) - 4),
+                math.rad(seed % 30),
+                math.rad(((seed // 3) % 10) - 5)
+            )
+        end
+    end
 end
 
 local function createSegmentModel(ctx, segmentIndex)
@@ -80,6 +127,7 @@ local function createSegmentModel(ctx, segmentIndex)
     slime.CanCollide = false
     slime.Transparency = 0.25
     addSlimeParticles(slime)
+    addRockBanks(model, definition)
 
     BridgeService.loadedSegments[segmentIndex] = model
 end
@@ -105,4 +153,3 @@ function BridgeService.Init(ctx)
 end
 
 return BridgeService
-

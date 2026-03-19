@@ -8,7 +8,7 @@ Containers are conventions, not runtime-generated objects:
 - `ReplicatedStorage/Net/RemoteFunctions` for `RemoteFunction`
 - `ServerScriptService/Signals/BindableEvents` for `BindableEvent`
 - `ServerScriptService/Signals/BindableFunctions` for `BindableFunction`
-- `SoundService/Ambience` for `Sound`
+- `ReplicatedStorage/Sounds` for `Sound`
 
 ## Network
 
@@ -26,17 +26,33 @@ Containers are conventions, not runtime-generated objects:
 - direction: `ServerToClient`
 - Notes: Pushes stuck UI state and current spectate target.
 
+### 3. `DistanceMilestoneReached`
+
+- Class: `RemoteEvent`
+- Parent: `ReplicatedStorage/Net/RemoteEvents`
+- direction: `ServerToClient`
+- Notes: Fires whenever a runner reaches a new 100-stud milestone.
+
 ## Bindables
 
 None declared.
 
 ## Sounds
 
-### 1. `SlimeHum`
+### 1. `SlimeAmbience`
 
 - Class: `Sound`
-- Parent: `SoundService/Ambience`
+- Parent: `ReplicatedStorage/Sounds`
 - soundId: `rbxassetid://0`
 - volume: `0.18`
 - looped: `true`
-- Notes: Placeholder ambience slot. In Studio, assign a valid audio asset to SoundService/Ambience/SlimeHum before enabling ambience.
+- Notes: Placeholder ambience loop. In Studio, assign a valid audio asset to ReplicatedStorage/Sounds/SlimeAmbience.
+
+### 2. `MilestoneCelebration`
+
+- Class: `Sound`
+- Parent: `ReplicatedStorage/Sounds`
+- soundId: `rbxassetid://0`
+- volume: `0.7`
+- looped: `false`
+- Notes: Short bright win-stinger for each 100-stud milestone. In Studio, assign a valid audio asset to ReplicatedStorage/Sounds/MilestoneCelebration.

@@ -1,17 +1,29 @@
 {
-  "build": 2,
+  "build": 3,
   "entries": [
     {
-      "name": "SlimeHum",
+      "name": "SlimeAmbience",
       "className": "Sound",
       "parent": {
-        "service": "SoundService",
-        "segments": ["Ambience"]
+        "service": "ReplicatedStorage",
+        "segments": ["Sounds"]
       },
       "soundId": "rbxassetid://0",
       "volume": 0.18,
       "looped": true,
-      "notes": "Placeholder ambience slot. In Studio, assign a valid audio asset to SoundService/Ambience/SlimeHum before enabling ambience."
+      "notes": "Placeholder ambience loop. In Studio, assign a valid audio asset to ReplicatedStorage/Sounds/SlimeAmbience."
+    },
+    {
+      "name": "MilestoneCelebration",
+      "className": "Sound",
+      "parent": {
+        "service": "ReplicatedStorage",
+        "segments": ["Sounds"]
+      },
+      "soundId": "rbxassetid://0",
+      "volume": 0.7,
+      "looped": false,
+      "notes": "Short bright win-stinger for each 100-stud milestone. In Studio, assign a valid audio asset to ReplicatedStorage/Sounds/MilestoneCelebration."
     }
   ]
 }
