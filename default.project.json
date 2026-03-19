@@ -1,0 +1,55 @@
+{
+  "name": "Stuck Forever",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "$path": "src/ReplicatedStorage",
+      "Net": {
+        "$className": "Folder",
+        "RemoteEvents": {
+          "$className": "Folder",
+          "SpectateCycleRequest": {
+            "$className": "RemoteEvent"
+          },
+          "SpectateStateChanged": {
+            "$className": "RemoteEvent"
+          }
+        },
+        "RemoteFunctions": {
+          "$className": "Folder"
+        }
+      }
+    },
+    "ServerScriptService": {
+      "$path": "src/ServerScriptService",
+      "Signals": {
+        "$className": "Folder",
+        "BindableEvents": {
+          "$className": "Folder"
+        },
+        "BindableFunctions": {
+          "$className": "Folder"
+        }
+      }
+    },
+    "SoundService": {
+      "Ambience": {
+        "$className": "Folder",
+        "SlimeHum": {
+          "$className": "Sound",
+          "$properties": {
+            "SoundId": "rbxassetid://0",
+            "Volume": 0.18,
+            "Looped": true,
+            "RollOffMaxDistance": 10000
+          }
+        }
+      }
+    },
+    "StarterPlayer": {
+      "StarterPlayerScripts": {
+        "$path": "src/StarterPlayer/StarterPlayerScripts"
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "build": 2,
+  "entries": [
+    {
+      "name": "SpectateCycleRequest",
+      "className": "RemoteEvent",
+      "parent": {
+        "service": "ReplicatedStorage",
+        "segments": ["Net", "RemoteEvents"]
+      },
+      "direction": "ClientToServer",
+      "notes": "Requests previous or next spectate target."
+    },
+    {
+      "name": "SpectateStateChanged",
+      "className": "RemoteEvent",
+      "parent": {
+        "service": "ReplicatedStorage",
+        "segments": ["Net", "RemoteEvents"]
+      },
+      "direction": "ServerToClient",
+      "notes": "Pushes stuck UI state and current spectate target."
+    }
+  ]
+}

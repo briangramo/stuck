@@ -1,0 +1,32 @@
+return {
+    GAME_NAME = "Stuck Forever",
+    BUILD = 2,
+    WORLD_SEED = 41731,
+
+    LOBBY_SIZE = 200,
+    LOBBY_THICKNESS = 8,
+    LOBBY_CENTER_Y = 0,
+    SPAWN_POSITION = Vector3.new(0, 8, 0),
+
+    BRIDGE_START_X = 100,
+    BRIDGE_WIDTH = 14,
+    BRIDGE_SEGMENT_LENGTH = 48,
+    BRIDGE_PART_HEIGHT = 2,
+    BRIDGE_PART_CENTER_Y = 3,
+
+    SLIME_CENTER_Y = 1,
+    SLIME_HEIGHT = 3,
+    LOBBY_SLIME_EXTENT = 900,
+    FALL_Y_THRESHOLD = -6,
+
+    STREAM_RADIUS = 200,
+    STREAM_UPDATE_RATE = 0.5,
+    DISTANCE_UPDATE_RATE = 0.1,
+    LEADERBOARD_UPDATE_RATE = 2,
+    SPECTATE_REFRESH_RATE = 0.5,
+    CHUNK_REFRESH_RATE = 45,
+
+    DATASTORE_PLAYER = "StuckForever_PlayerState_v2",
+    DATASTORE_CHUNK = "StuckForever_ChunkState_v2",
+}
+

@@ -1,0 +1,17 @@
+{
+  "build": 2,
+  "entries": [
+    {
+      "name": "SlimeHum",
+      "className": "Sound",
+      "parent": {
+        "service": "SoundService",
+        "segments": ["Ambience"]
+      },
+      "soundId": "rbxassetid://0",
+      "volume": 0.18,
+      "looped": true,
+      "notes": "Placeholder ambience slot. In Studio, assign a valid audio asset to SoundService/Ambience/SlimeHum before enabling ambience."
+    }
+  ]
+}
